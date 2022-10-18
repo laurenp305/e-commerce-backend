@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
   }
 });
 
+
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
@@ -144,7 +145,7 @@ router.delete('/:id', (req, res) => {
   })
   .then(dbProductData => {
     if (!dbProductData) {
-      res.status(404).json({message: 'No product with this id found. Try again.'});
+      res.status(404).json({message: 'No product with this id found'});
       return;
     }
     res.json(dbProductData);
